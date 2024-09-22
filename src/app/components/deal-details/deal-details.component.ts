@@ -1,7 +1,7 @@
 import {Component, model} from '@angular/core';
 import {Deal} from "../../model/deal.model";
 import {MatDialogContent} from "@angular/material/dialog";
-import {DecimalPipe, NgOptimizedImage} from "@angular/common";
+import {DecimalPipe, NgOptimizedImage, PercentPipe} from "@angular/common";
 import {MatCard, MatCardContent, MatCardHeader, MatCardTitle} from "@angular/material/card";
 import {MatIcon} from "@angular/material/icon";
 
@@ -16,7 +16,8 @@ import {MatIcon} from "@angular/material/icon";
     MatCardHeader,
     MatCardContent,
     MatIcon,
-    NgOptimizedImage
+    NgOptimizedImage,
+    PercentPipe
   ],
   templateUrl: './deal-details.component.html',
   styleUrl: './deal-details.component.scss'
