@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "nx serve",
     "build": "nx build",
+    "build:prod": "nx build termsheet-deals-app --prod --base-href=/deals-app/",
     "watch": "nx build --watch --configuration development",
     "test": "nx test"
   },
