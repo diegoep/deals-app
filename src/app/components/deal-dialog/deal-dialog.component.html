@@ -1,0 +1,11 @@
+<mat-dialog-actions class="dialog-actions">
+  <mat-icon>info</mat-icon>
+  <span class="spacer"></span>
+  <h2>{{ deal().name }}</h2>
+  <button class="close" mat-icon-button (click)="closeDialog()">
+    <mat-icon>close</mat-icon>
+  </button>
+</mat-dialog-actions>
+<mat-dialog-content>
+  <td-deal-details [deal]="deal()"></td-deal-details>
+</mat-dialog-content>

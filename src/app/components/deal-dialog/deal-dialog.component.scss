@@ -1,0 +1,15 @@
+.dialog-actions {
+  display: flex;
+}
+
+.dialog-actions h2 {
+  flex: auto;
+}
+
+.dialog-actions .close {
+ text-align: end;
+}
+
+.spacer {
+  flex: 1;
+}

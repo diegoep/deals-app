@@ -1,0 +1,53 @@
+@use '@angular/material' as mat;
+@import '@angular/material/prebuilt-themes/azure-blue.css';
+
+.logo {
+  background: url('../../public/logo.svg') left center no-repeat;
+  background-size: 200px;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  height: 50px;
+  width: 200px;
+  cursor: pointer;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff8e0;
+  border-bottom: 2px solid #ede4da;
+}
+
+mat-nav-list.list-horizontal {
+  display: flex;
+  flex-direction: row;
+}
+
+
+.container {
+  padding: 1vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.mat-list-item span {
+  display: flex;
+  align-items: center;
+}
+
+.toolbar-icon {
+  margin-right: 8px;
+  line-height: 35px;
+}
+
+@media (max-width: 600px) {
+  .nav-text {
+    display: none;
+  }
+  .toolbar-icon {
+    margin-right: 0;
+    line-height: 30px;
+  }
+}

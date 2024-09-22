@@ -1,0 +1,48 @@
+<form class="form" [formGroup]="dealForm" (ngSubmit)="onSubmit()">
+  <div class="form-row">
+    <label for="name">Deal Name:</label>
+    <mat-form-field class="mat-form-field" appearance="fill">
+      <input id="name" matInput formControlName="name" required>
+    </mat-form-field>
+  </div>
+
+  <div class="form-row">
+    <label for="description">Description:</label>
+    <mat-form-field class="mat-form-field" appearance="fill">
+      <textarea id="description" matInput formControlName="description" required></textarea>
+    </mat-form-field>
+  </div>
+
+  <div class="form-row">
+    <label for="purchasePrice">Purchase Price:</label>
+    <mat-form-field class="mat-form-field" appearance="fill">
+      <input id="purchasePrice" matInput formControlName="purchasePrice" type="number" required>
+    </mat-form-field>
+  </div>
+
+  <div class="form-row">
+    <label for="address">Address:</label>
+    <mat-form-field class="mat-form-field" appearance="fill">
+      <input id="address" matInput formControlName="address" required>
+    </mat-form-field>
+  </div>
+
+  <div class="form-row">
+    <label for="NOI">NOI:</label>
+    <mat-form-field class="mat-form-field" appearance="fill">
+      <input id="NOI" matInput formControlName="NOI" type="number" required>
+    </mat-form-field>
+  </div>
+
+  <div class="form-row">
+    <label for="image">Image URL:</label>
+    <mat-form-field class="mat-form-field" appearance="fill">
+      <input id="image" matInput formControlName="image">
+    </mat-form-field>
+  </div>
+
+  <div class="button-container">
+    <button mat-raised-button type="submit" [disabled]="dealForm.invalid">@if (action() === DealFormActions.ADD) { Add } @else { Update } Deal</button>
+    <button mat-button  type="button" (click)="cancel()">Cancel</button>
+  </div>
+</form>

@@ -1,0 +1,79 @@
+.dialog-container {
+  display: flex;
+}
+
+.image-column {
+  flex: 2;
+  padding: 0 30px;
+  text-align: center;
+}
+
+.details-column {
+  flex: 2;
+}
+
+.deal-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.info-card {
+  display: flex;
+  padding: 14px;
+  margin: 14px 0;
+}
+
+.card-content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.icon {
+  flex: 0.5;
+}
+
+.label {
+  flex: 2;
+  font-weight: bold;
+  text-align: left;
+}
+
+.value {
+  flex: 6;
+  text-align: right;
+}
+
+/* Mobile Styles */
+@media (max-width: 600px) {
+
+  .image-column {
+    width: 100%;
+    padding: 0;
+  }
+
+  .details-column {
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  .info-card {
+    margin: 10px 0;
+  }
+
+  .icon {
+    flex: 1;
+  }
+
+  .label {
+    flex: 1.5;
+    font-weight: bold;
+    text-align: left;
+  }
+
+  .value {
+    flex: 5;
+    text-align: right;
+  }
+}

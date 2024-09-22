@@ -1,0 +1,74 @@
+<div class="data-table">
+<mat-form-field class="filter">
+  <mat-label>Filter</mat-label>
+  <input matInput (keyup)="applyFilter($any($event.target).value)" placeholder="Filter">
+</mat-form-field>
+<div>
+<mat-table [dataSource]="dataSource" matSort>
+  <!-- ID Column -->
+  <ng-container matColumnDef="id">
+    <mat-header-cell *matHeaderCellDef mat-sort-header class="column-id">ID</mat-header-cell>
+    <mat-cell *matCellDef="let element" class="column-id pointer">
+      {{ element.id }}
+    </mat-cell>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="name">
+    <mat-header-cell *matHeaderCellDef mat-sort-header class="column-name">Name</mat-header-cell>
+    <mat-cell *matCellDef="let element" class="column-name pointer">
+      {{ element.name }}
+    </mat-cell>
+  </ng-container>
+
+  <!-- Purchase Price Column with Currency Pipe -->
+  <ng-container matColumnDef="purchasePrice">
+    <mat-header-cell *matHeaderCellDef mat-sort-header class="column-purchasePrice">Purchase Price</mat-header-cell>
+    <mat-cell *matCellDef="let element" class="column-purchasePrice pointer">
+      {{ element.purchasePrice | currency }}
+    </mat-cell>
+  </ng-container>
+
+  <!-- Address Column -->
+  <ng-container matColumnDef="address">
+    <mat-header-cell *matHeaderCellDef mat-sort-header class="column-address">Address</mat-header-cell>
+    <mat-cell *matCellDef="let element" class="column-address pointer">
+      {{ element.address }}
+    </mat-cell>
+  </ng-container>
+
+  <!-- NOI Column with Number Pipe -->
+  <ng-container matColumnDef="NOI">
+    <mat-header-cell *matHeaderCellDef mat-sort-header class="column-NOI">NOI</mat-header-cell>
+    <mat-cell *matCellDef="let element" class="column-NOI pointer">
+      {{ element.NOI | currency }}
+    </mat-cell>
+  </ng-container>
+
+  <!-- Cap Rate Column with Percent Pipe -->
+  <ng-container matColumnDef="capRate">
+    <mat-header-cell *matHeaderCellDef mat-sort-header class="column-capRate">Cap Rate</mat-header-cell>
+    <mat-cell *matCellDef="let element" class="column-capRate pointer">
+      {{ element.capRate | percent }}
+    </mat-cell>
+  </ng-container>
+
+  <!-- Actions Column -->
+  <ng-container matColumnDef="actions">
+    <mat-header-cell *matHeaderCellDef class="column-actions">Actions</mat-header-cell>
+    <mat-cell *matCellDef="let element" class="column-actions pointer">
+      <button mat-icon-button (click)="editDeal(element); $event.stopPropagation();">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-icon-button (click)="removeDeal(element); $event.stopPropagation();">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="getDisplayedColumns();"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: getDisplayedColumns();" (click)="click(row)"></mat-row>
+</mat-table>
+<mat-paginator [pageSizeOptions]="[10, 20, 50]"></mat-paginator>
+</div>
+</div>

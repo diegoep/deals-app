@@ -1,0 +1,7 @@
+<mat-card>
+  <mat-card-header class="card-header"><h2>My Deals</h2></mat-card-header>
+  <mat-card-content class="main-container">
+    <td-deals-data-table [data]="deals" [displayedColumns]="displayedColumns" (onRowClicked)="open($event)" (onEditClicked)="navigateToEditPage($event)" (onDeleteClicked)="openDeleteDialog($event)">
+    </td-deals-data-table>
+  </mat-card-content>
+</mat-card>

@@ -1,1 +1,49 @@
-/* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
+@use "@material/checkbox";
+@use "@material/icon-button";
+@use "@material/data-table/data-table";
+@import '@angular/material/prebuilt-themes/azure-blue.css';
+
+@include checkbox.core-styles;
+@include data-table.core-styles;
+@include data-table.theme-baseline;
+@import "@material/icon-button/mdc-icon-button";
+
+@include mat.core();
+
+$theme: mat.define-theme((
+  color: (
+    theme-type: light,
+    primary: mat.$azure-palette
+  ),
+  density: (
+    scale: -1 // Adjust density if needed
+  )
+));
+
+footer {
+  background-color: #faf9fd;
+  height: 40px;
+  width: 100%;
+  font-family: monospace;
+  text-align: center;
+  bottom: 0;
+  margin-top: 20px;
+}
+
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.card-header {
+  align-items: center;
+  justify-content: center;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 98%;
+  padding: 2%;
+}
+

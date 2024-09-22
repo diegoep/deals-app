@@ -1,0 +1,48 @@
+<mat-dialog-content>
+  <div class="dialog-container">
+    <div class="image-column">
+      <img #photo [ngSrc]="getDealImage(deal())" width="600" height="400" alt="{{ deal().name }}" class="deal-image" (error)="photo.src='empty-fallback-image.png'"/>
+    </div>
+    <div class="details-column">
+      <mat-card class="info-card">
+        <div class="card-content">
+          <mat-icon class="icon">description</mat-icon>
+          <span class="label">Description:</span>
+          <span class="value">{{ deal().description }}</span>
+        </div>
+      </mat-card>
+
+      <mat-card class="info-card">
+        <div class="card-content">
+          <mat-icon class="icon">attach_money</mat-icon>
+          <span class="label">Purchase Price:</span>
+          <span class="value">${{ deal().purchasePrice | number }}</span>
+        </div>
+      </mat-card>
+
+      <mat-card class="info-card">
+        <div class="card-content">
+          <mat-icon class="icon">location_on</mat-icon>
+          <span class="label">Address:</span>
+          <span class="value">{{ deal().address }}</span>
+        </div>
+      </mat-card>
+
+      <mat-card class="info-card">
+        <div class="card-content">
+          <mat-icon class="icon">monetization_on</mat-icon>
+          <span class="label">NOI:</span>
+          <span class="value">${{ deal().NOI | number }}</span>
+        </div>
+      </mat-card>
+
+      <mat-card class="info-card">
+        <div class="card-content">
+          <mat-icon class="icon">percent</mat-icon>
+          <span class="label">Cap Rate:</span>
+          <span class="value">{{ deal().capRate | number }}%</span>
+        </div>
+      </mat-card>
+    </div>
+  </div>
+</mat-dialog-content>

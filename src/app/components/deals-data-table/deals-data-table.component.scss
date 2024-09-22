@@ -1,0 +1,57 @@
+.column-name {
+  flex: 2;
+}
+
+.column-id {
+  flex: 0;
+}
+
+.column-purchasePrice {
+  flex: 1;
+}
+
+.column-address {
+  flex: 4;
+}
+
+.column-actions {
+  flex: 1;
+}
+
+.column-capRate {
+  flex: 2;
+}
+
+.column-NOI {
+  flex: 2;
+}
+
+/* Set minimum and maximum widths for certain columns */
+.column-name, .column-address {
+  min-width: 150px;  /* Set minimum width */
+  max-width: 400px;  /* Set maximum width */
+  white-space: nowrap; /* Prevent text wrapping */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Ellipsis for overflowing content */
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.filter {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 600px) {
+  .data-table {
+    margin-right: 5vw;
+  }
+  .column-address,
+  .column-NOI,
+  .column-capRate {
+    display: none;
+  }
+}
